@@ -1,0 +1,24 @@
+<h1>Админ панель</h1>
+
+<a href="/logout">Выйти</a>
+
+{% for app in apps %}
+    <form method="post">
+        <p>
+            Пользователь: {{ app[1] }} <br>
+            Курс: {{ app[2] }} <br>
+            Статус: {{ app[5] }}
+        </p>
+
+        <input type="hidden" name="app_id" value="{{ app[0] }}">
+
+        <select name="status">
+            <option>На рассмотрении</option>
+            <option>Одобрено</option>
+            <option>Отклонено</option>
+        </select>
+
+        <button type="submit" style="background: pink">Обновить</button>
+    </form>
+    <hr>
+{% endfor %}
