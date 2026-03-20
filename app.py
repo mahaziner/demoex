@@ -4,6 +4,7 @@ import sqlite3
 app = Flask(__name__)
 app.secret_key = "secret_key"
 
+
 def init_db():
     with sqlite3.connect("demoex.db") as conn:
         c = conn.cursor()
